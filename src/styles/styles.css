@@ -1,0 +1,16 @@
+.clean-navbar.fixed-top {
+  height: 61px;
+}
+.clean-block.clean-hero:before {
+  margin-top: -20px;
+}
+.clean-block .clean-hero {
+  /* background-image: url("./img/image4.jpg"); */
+  color: rgba(9, 162, 255, 0.85);
+  margin-top: -21px;
+  background-color: aliceblue;
+}
+
+.clean-block.clean-hero:before {
+  background-color: rgba(9, 162, 255, 0.85);
+}
