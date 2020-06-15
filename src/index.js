@@ -1,16 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Homepage from "./components/index";
-import Login from "./components/login";
-import Register from "./components/register";
-import Routes from "./routes/ApppRouter";
+import Routes from "./routes/AppRouter";
 import * as serviceWorker from "./serviceWorker";
 import "./styles/styles.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Register />
+    <Routes />
   </React.StrictMode>,
   document.getElementById("root")
 );

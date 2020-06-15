@@ -14,3 +14,8 @@
 .clean-block.clean-hero:before {
   background-color: rgba(9, 162, 255, 0.85);
 }
+.message-warning {
+  color: red;
+  font-size: 12px;
+  text-align: center;
+}

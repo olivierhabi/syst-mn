@@ -1,12 +1,14 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
       <div class="container">
-        <a class="navbar-brand logo" href="#">
-          Syst
-        </a>
+        <NavLink to="/" exact={true}>
+          <a class="navbar-brand logo">Syst</a>
+        </NavLink>
+
         <button
           data-toggle="collapse"
           class="navbar-toggler"
@@ -18,9 +20,11 @@ const Navbar = () => {
         <div class="collapse navbar-collapse" id="navcol-1">
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item" role="presentation">
-              <button class="btn btn-primary" type="button">
-                Login
-              </button>
+              <NavLink to="/login" exact={true}>
+                <button class="btn btn-primary" type="button">
+                  Login
+                </button>
+              </NavLink>
             </li>
           </ul>
         </div>
