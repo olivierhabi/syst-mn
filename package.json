@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "babel-watch src/app.js",
     "start": "node --require @babel/polyfill --require @babel/register ./src/app.js ",
-    "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register"
+    "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": "https://github.com/olivierhabi/Product-management.git",
   "author": "Olivier HABIMANA <habimanaolivier6@gmail.com>",
