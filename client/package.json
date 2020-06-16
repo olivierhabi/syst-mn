@@ -14,11 +14,9 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "dev-start": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "server": "cd server && yarn start",
-    "start": "concurrently - kill-others \"yarn run dev-start\" \"yarn run server\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
