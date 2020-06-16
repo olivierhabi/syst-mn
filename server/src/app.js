@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.use("/api/user", userRoutes);
 app.use("/api/people", PeopleRoutes);
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   return res.status(200).send({
     status: 200,
     message: "Welcome to Sys SYSTEM",
