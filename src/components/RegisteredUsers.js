@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import API from "./Api";
 import Adminav from "../components/AdminNav";
 import Dashboard from "../components/Dashboard";
+import { convertArrayToCSV } from "convert-array-to-csv";
+
+import { CSVLink, CSVDownload } from "react-csv";
 
 const Table = () => {
   const [data, setData] = useState([]);
@@ -28,6 +31,7 @@ const Table = () => {
       mounted = false;
     };
   }, []);
+  const csv = convertArrayToCSV(data);
 
   return (
     <body id="page-top">
@@ -48,8 +52,11 @@ const Table = () => {
                   height: 38,
                 }}
               >
-                Export
+                <CSVLink id="export-btn" data={csv}>
+                  Export
+                </CSVLink>
               </button>
+
               <div class="card shadow">
                 <div class="card-header py-3">
                   <p class="text-primary m-0 font-weight-bold">Users info</p>
