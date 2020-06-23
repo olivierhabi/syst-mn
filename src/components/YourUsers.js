@@ -5,7 +5,7 @@ import Dashboard from "../components/Dashboard";
 
 const Table = () => {
   const [data, setData] = useState([]);
-  const [, setMessage] = useState("");
+  const [message, setMessage] = useState("");
 
   const token = localStorage.getItem("auth-token");
   const options = {
@@ -29,6 +29,27 @@ const Table = () => {
     };
   }, []);
 
+  const deleteUser = async (id) => {
+    setMessage("");
+    await API.delete(`/user/delete/${id}`, options)
+      .then((res) => {
+        setMessage(res.data.message);
+        fetchData();
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const Error = () => {
+    if (!message) {
+      return null;
+    }
+    return (
+      <div>
+        <p className="message-warning">{message}</p>
+      </div>
+    );
+  };
+
   return (
     <body id="page-top">
       <div id="wrapper">
@@ -51,6 +72,7 @@ const Table = () => {
                     aria-describedby="dataTable_info"
                   >
                     <table class="table dataTable my-0" id="dataTable">
+                      <Error />
                       <thead>
                         <tr>
                           <th>Username</th>
@@ -68,10 +90,15 @@ const Table = () => {
                                 {index}. {users.username}
                               </td>
                               <td>
-                                <a href="#">Delete</a>
+                                <a
+                                  href="#"
+                                  onClick={() => deleteUser(users.id)}
+                                >
+                                  Delete
+                                </a>
                               </td>
                               <td>
-                                <a href="#">Edit</a>
+                                <a href="#"> Edit</a>
                               </td>
                             </tr>
                           );

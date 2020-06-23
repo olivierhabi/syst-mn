@@ -2,17 +2,16 @@
   height: 61px;
 }
 .clean-block.clean-hero:before {
-  margin-top: -20px;
+  /* margin-top: -20px; */
 }
 .clean-block .clean-hero {
-  /* background-image: url("./img/image4.jpg"); */
-  color: rgba(9, 162, 255, 0.85);
-  margin-top: -21px;
+  /* margin-top: -21px; */
+  padding-top: -21px;
   background-color: aliceblue;
 }
 
 .clean-block.clean-hero:before {
-  background-color: rgba(9, 162, 255, 0.85);
+  background-color: rgba(48, 98, 129, 0.175);
 }
 .message-warning {
   color: red;
@@ -22,4 +21,9 @@
 #export-btn {
   color: white;
   text-decoration: none;
+}
+
+.clean-navbar.fixed-top + .page {
+  padding-top: 0;
+  /* height: 500px; */
 }

@@ -13,25 +13,35 @@ import Auth from "../components/Auth";
 
 const AppRouter = () => {
   return (
-    <BrowserRouter>
-      <Auth>
-        <Route path="/register" component={Register} exact={true} />
-      </Auth>
-      <div>
-        <Switch>
-          <Route path="/" component={HomePage} exact={true} />
-          <Route path="/login" component={Login} exact={true} />
-          <Route path="/admin" component={LoginAdmin} exact={true} />
-          <Route path="/logout" component={Logout} exact={true} />
+    <>
+      <BrowserRouter>
+        <div>
+          <Switch>
+            <Route path="/" component={HomePage} exact={true} />
+            <Route path="/login" component={Login} exact={true} />
+            <Route path="/admin" component={LoginAdmin} exact={true} />
+            <Route path="/logout" component={Logout} exact={true} />
 
-          <Authenticated>
-            <Route path="/account" component={RegisteredUsers} exact={true} />
-            <Route path="/users" component={YourUsers} exact={true} />
-            <Route path="/registration" component={Registration} exact={true} />
-          </Authenticated>
+            <Authenticated>
+              <Route path="/account" component={RegisteredUsers} exact={true} />
+              <Route path="/users" component={YourUsers} exact={true} />
+              <Route
+                path="/registration"
+                component={Registration}
+                exact={true}
+              />
+            </Authenticated>
+          </Switch>
+        </div>
+      </BrowserRouter>
+      <BrowserRouter>
+        <Switch>
+          <Auth>
+            <Route path="/register" component={Register} exact={true} />
+          </Auth>
         </Switch>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </>
   );
 };
 

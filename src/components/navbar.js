@@ -6,7 +6,9 @@ const Navbar = () => {
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
       <div class="container">
         <NavLink to="/" exact={true}>
-          <a class="navbar-brand logo">Syst</a>
+          <a class="navbar-brand logo">
+            AGA Rwanda Network Registration System
+          </a>
         </NavLink>
 
         <button

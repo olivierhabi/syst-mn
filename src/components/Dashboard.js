@@ -15,7 +15,7 @@ const Dashbord = () => {
           >
             <div class="sidebar-brand-icon rotate-n-15"></div>
             <div class="sidebar-brand-text mx-3">
-              <span>Syst</span>
+              <span>AGA Rwanda</span>
             </div>
           </a>
           <hr class="sidebar-divider my-0" />

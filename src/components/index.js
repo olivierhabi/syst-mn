@@ -1,5 +1,5 @@
 import React from "react";
-import imageHome from "../img/image4.jpg";
+import imageHome from "../img/rwanda.jpg";
 import Navbar from "./navbar";
 import Footer from "./footer";
 
@@ -11,7 +11,7 @@ const HomePage = () => {
         <section
           class="clean-block clean-hero"
           style={{
-            backgroundImage: { imageHome },
+            backgroundImage: `url(${imageHome})`,
             color: (9, 162, 255, 0.85),
             marginTop: -21,
           }}

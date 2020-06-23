@@ -11,6 +11,7 @@ const Register = () => {
   const [district, setDistrict] = useState("");
   const [sector, setSector] = useState("");
   const [cell, setCell] = useState("");
+  const [village, setVillage] = useState("");
   const [residence, setResidence] = useState("");
   const [placeOfWork, setplaceOfWork] = useState("");
   const [idNo, setIdNo] = useState("");
@@ -41,6 +42,7 @@ const Register = () => {
         district,
         sector,
         cell,
+        village,
         residence,
         placeOfWork,
         idNo,
@@ -64,6 +66,7 @@ const Register = () => {
         setDistrict("");
         setSector("");
         setCell("");
+        setVillage("");
         setResidence("");
         setplaceOfWork("");
         setIdNo("");
@@ -103,7 +106,9 @@ const Register = () => {
       <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
         <div class="container">
           <NavLink to="/" exact={true}>
-            <a class="navbar-brand logo">Syst</a>
+            <a class="navbar-brand logo">
+              AGA Rwanda Network Registration System
+            </a>
           </NavLink>
           <div id="navcol-1">
             <ul class="nav navbar-nav ml-auto">
@@ -212,6 +217,16 @@ const Register = () => {
               type="text"
               name="name"
               placeholder="Cell"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              value={village}
+              onChange={(e) => setVillage(e.target.value)}
+              class="form-control"
+              type="text"
+              name="name"
+              placeholder="Village"
             />
           </div>
           <div class="form-group">
