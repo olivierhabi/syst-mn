@@ -12,6 +12,7 @@ const validatePeople = {
       province: Joi.string().min(3).required(),
       district: Joi.string().min(3).required(),
       sector: Joi.string().min(3).required(),
+      village: Joi.string().min(3).required(),
       cell: Joi.string().min(3).required(),
       residence: Joi.string().min(3).required(),
       placeOfWork: Joi.string().min(3).required(),

@@ -152,6 +152,44 @@ class UserController {
       return res.status(500).send({ message: "SERVER_ERROR" });
     }
   }
+
+  /**
+   *
+   * @param {object} req
+   * @param {object} res
+   * @return {object} user object
+   */
+  static async Delete(req, res) {
+    const id = req.params.id;
+
+    try {
+      const user = await UserService.findDeleteUser(id);
+
+      if (!user) {
+        return res.status(404).send({
+          status: 404,
+          message: "User not found",
+        });
+      }
+      if (user.dataValues.admin) {
+        return res.status(400).send({
+          status: 400,
+          message: "Admin you can't delete",
+        });
+      }
+      await UserService.DeleteUser(id);
+
+      return res.status(200).send({
+        status: 200,
+        message: "User Deleted successfull",
+      });
+    } catch (error) {}
+
+    try {
+    } catch (error) {
+      return res.status(500).send({ message: "SERVER_ERROR" });
+    }
+  }
 }
 
 export default UserController;

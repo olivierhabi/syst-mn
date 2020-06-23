@@ -19,6 +19,28 @@ class UserService {
     }
     next();
   }
+  static async findDeleteUser(id, next) {
+    try {
+      return await database.User.findOne({
+        where: { id: id },
+      });
+    } catch (error) {
+      throw error;
+    }
+    next();
+  }
+
+  static async DeleteUser(id, next) {
+    try {
+      return await database.User.destroy({
+        where: {
+          id: id,
+        },
+      });
+    } catch (error) {
+      throw error;
+    }
+  }
   static async getAllUsers(id, next) {
     try {
       return await database.User.findAll();

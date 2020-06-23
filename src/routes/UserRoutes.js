@@ -10,5 +10,6 @@ router.post("/signup", auth, validate, UserController.AddUser);
 router.post("/signin", validate, UserController.Login);
 router.post("/admin", validate, UserController.LoginAdmin);
 router.get("/all", auth, UserController.getAll);
+router.delete("/delete/:id", auth, UserController.Delete);
 
 export default router;

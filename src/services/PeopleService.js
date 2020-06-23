@@ -3,6 +3,7 @@ import database from "../models";
 class PeopleService {
   static async addPeople(people, next) {
     try {
+      console.log(people);
       return await database.People.create(people);
     } catch (error) {
       throw error;
